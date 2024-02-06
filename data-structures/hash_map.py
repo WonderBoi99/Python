@@ -42,17 +42,27 @@ class HashMap():
             print(list)
 
 if __name__ == '__main__':
-    test = HashMap()
-    test['jan 2'] = 100
-    test['march 6'] = 100
-    test.show()
-    print('-------')
-    test['jan 2'] = 500
-    test['march 17'] = 300
-    print(test['march 17'])
-    test.show()
-    print('-------')
-    del test['jan 2']
-    test.show()
-    print('-------')
+    # test = HashMap()
+    # file = open('nyc_weather.csv')
+    # heading = True
+    # for line in file:
+    #     if heading:
+    #         heading = False
+    #     else:
+    #         element = line.strip().split(',')
+    #         test[element[0]] = element[1]
+    # test.show()
+    # print('-----')
     
+    # temp = 'Jan'
+    # sum = 0
+    # for date in range(1,8):
+    #     temp += ' {}'.format(date)
+    #     sum += int(test[temp][1])
+    #     print(temp)
+    #     temp = 'Jan'
+    # print(sum / 7)
+
+    test = dict()
+    poem = open('poem.txt')
+    print(poem.read().strip())
