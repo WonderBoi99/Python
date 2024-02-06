@@ -43,9 +43,20 @@ class LinkedList():
         for value in values:
             self.add_to_tail(value)
 
-    # def insert_after_value(self, data_after, data_to_insert):
-    #     # Search for first occurance of data_after value in linked list
-    #     # Now insert data_to_insert after data_after node
+    def insert_after_value(self, data_after, data_to_insert):
+        # Search for first occurance of data_after value in linked list
+        # Now insert data_to_insert after data_after node
+        if self.head.data == data_after:
+            node = Node(data_to_insert, self.head.next)
+            self.head.next = node
+            return
+        itr = self.head
+        while itr.next:
+            if itr.next.data == data_after:
+                node = Node(data_to_insert, itr.next.next)
+                itr.next.next = node
+                return
+            itr = itr.next
 
     def remove_by_value(self, data):
         # Remove first node that contains data
@@ -89,12 +100,8 @@ ll.insert_values(["banana","mango","grapes","orange"])
 print(ll)
 ll.remove_by_value("banana")
 print(ll)
-ll.remove_by_value("mango")
+ll.insert_after_value("mango","apple")
 print(ll)
-ll.remove_by_value("apple")
-print(ll)
-ll.remove_by_value("grapes")
-print(ll)
-ll.remove_by_value(100)
+ll.insert_after_value(100,"apple")
 print(ll)
 
