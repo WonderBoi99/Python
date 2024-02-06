@@ -1,3 +1,2 @@
 # Python
-Notes
-Types of errors: Syntax, Runtime, Semantic (program does not work as expected) 
+Some Practise on Data Structures and Algorithms
