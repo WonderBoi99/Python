@@ -11,6 +11,18 @@ class HashMap():
         for x in str(key):
             sum += ord(x)
         return sum % self.MAX
+    
+    def __setitem__(self, key, value):
+        index = self.hashFunction(key)
+        self.storage[index] = value
+
+    def __getitem__(self, key):
+        index = self.hashFunction(key)
+        return self.storage[index]
+    
+    def __delitem__(self, key):
+        index = self.hashFunction(key)
+        self.storage[index] = None
 
 
     def show(self):
@@ -19,5 +31,12 @@ class HashMap():
 
 if __name__ == '__main__':
     test = HashMap()
-    print(test.hashFunction('bobby'))
-    # test.show()
+    test['jan 2'] = 100
+    test['mar 5'] = 3400
+    test['dec 12'] = 'tres'
+    print(test['mar 5'])
+    test.show()
+    print('-------')
+    del test['dec 12']
+    # print(test.hashFunction('bobby'))
+    test.show()
