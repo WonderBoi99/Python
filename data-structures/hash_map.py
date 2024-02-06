@@ -63,6 +63,4 @@ if __name__ == '__main__':
     #     temp = 'Jan'
     # print(sum / 7)
 
-    test = dict()
-    poem = open('poem.txt')
-    print(poem.read().strip())
+    
