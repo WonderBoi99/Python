@@ -44,10 +44,12 @@ class HashMap():
 if __name__ == '__main__':
     test = HashMap()
     test['jan 2'] = 100
+    test['march 6'] = 100
     test.show()
     print('-------')
     test['jan 2'] = 500
-    print(test['jan 2'])
+    test['march 17'] = 300
+    print(test['march 17'])
     test.show()
     print('-------')
     del test['jan 2']
