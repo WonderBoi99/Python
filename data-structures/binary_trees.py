@@ -80,6 +80,30 @@ class BinaryTreeNode:
     def calculate_sum(self):
         values = self.in_order_traversal()
         return sum(values)
+    
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+        else:
+            #you have reached the value
+            if self.left == None and self.right == None:
+                return None
+            if self.left == None:
+                return self.right
+            if self.right == None:
+                return self.left
+            
+            max_val = self.left.find_max()
+            self.data = max_val
+            self.left = self.left.delete(max_val)
+
+        return self
+
+
 
 def build_tree(values):
     root = BinaryTreeNode(values[0])
@@ -88,7 +112,7 @@ def build_tree(values):
     return root
     
 if __name__ == '__main__':
-    test = build_tree([15,12,7,14,27,20,88,23])
+    test = build_tree([17,4,1,20,9,23,18,34])
     print(test.in_order_traversal())
     print(test.search(15))
     print(test.find_min())
@@ -96,4 +120,6 @@ if __name__ == '__main__':
     print(test.calculate_sum())
     print(test.pre_order_traversal())
     print(test.post_order_traversal())
+    temp = test.delete(9)
+    print(temp.in_order_traversal())
         
