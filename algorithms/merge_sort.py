@@ -34,11 +34,7 @@ def merge_two_sorted_lists(left, right , arr):
         r += 1
         o += 1
 
-
-
-
-
-
+ 
 if __name__ == '__main__':
     test_cases = [
         [10, 3, 15, 7, 8, 23, 98, 29],
