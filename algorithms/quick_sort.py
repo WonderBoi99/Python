@@ -11,31 +11,28 @@ def partitions(arr, start, end):
 
         if start < end and start != end:
             arr[start], arr[end] = arr[end], arr[start]
-    
+
     arr[end], arr[archor_index] = archor, arr[end]
     return end
+
 
 def quick_sort(arr, start, end):
     if start < end:
         pi = partitions(arr, start, end)
-        #sort left side
+        # sort left side
         quick_sort(arr, start, pi - 1)
-        #sort right side
+        # sort right side
         quick_sort(arr, pi + 1, end)
 
 
-     
-
-
-
 if __name__ == '__main__':
-    elements = [11,9,29,7,2,15,28]
+    elements = [11, 9, 29, 7, 2, 15, 28]
     # elements = ["mona", "dhaval", "aamir", "tina", "chang"]
-    partitions(elements, 0, len(elements)-1)
+    partitions(elements, 0, len(elements) - 1)
     print(elements)
 
     tests = [
-        [11,9,29,7,2,15,28],
+        [11, 9, 29, 7, 2, 15, 28],
         [3, 7, 9, 11],
         [25, 22, 21, 10],
         [29, 15, 28],
@@ -44,5 +41,5 @@ if __name__ == '__main__':
     ]
 
     for elements in tests:
-        quick_sort(elements, 0, len(elements)-1)
+        quick_sort(elements, 0, len(elements) - 1)
         print(f'sorted array: {elements}')
