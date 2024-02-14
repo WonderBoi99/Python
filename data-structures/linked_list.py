@@ -1,3 +1,29 @@
+'''
+To understand benefits of Linked Lists, I need to should learn how dynamic arrays work in python
+
+Array
+When you first create an array, it will allocate a specific amount of memory (lets say 5)
+Already this isnt most memory efficient as our array is empty
+Then say are performing an insert a index 0, it will shift every element forward by 1, time consuming
+if you array is full, it will allocate double the initial memory and copy over, again speed issue and memory inefficent
+continous memory
+
+linked list
+random memory
+insert is easier, add new data in random location and get address, give it to previous element
+memory is used when needed
+
+the advantage array has over linked list is indexing (O(i) for array, cant index for ll has to search so O(n))
+'''
+
+
+
+
+
+
+
+
+
 class Node():
     def __init__(self, data, next):
         self.data = data
